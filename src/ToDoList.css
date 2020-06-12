@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+
+.border {
+    border-width: "thick";
+    margin: 50px 350px;
+    min-height: 500px;
+    min-width: 300px;
+    padding: 20px;
+    background-image: url(./cool-background.png);
+}

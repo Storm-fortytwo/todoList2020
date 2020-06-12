@@ -1,0 +1,14 @@
+h1 {
+    background-color: blanchedalmond;
+}
+
+.todoText {
+    position: relative;
+    padding: 10px;
+}
+
+.buttons {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
