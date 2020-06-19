@@ -11,7 +11,7 @@ export default class toDoList extends Component {
     super(props);
 
     this.state = {
-      navBaseChosen: "",
+      navBaseChosen: "all",
       tasks: [],
       currentTask: {
         value: "",
@@ -71,7 +71,7 @@ export default class toDoList extends Component {
   };
 
   //methods to TaskCards
-  isComplete = (e) => {
+  isCompleted = (e) => {
     e.preventDefault();
     const taskIndex = this.state.tasks.findIndex((el) => el.id === e.target.id);
     let tasksCopy = [...this.state.tasks];
@@ -88,6 +88,7 @@ export default class toDoList extends Component {
 
   deleteItem = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     let tasksCopy = this.state.tasks
       .filter((el) => el.id !== e.target.id)
       .map((el) => el);
@@ -121,12 +122,12 @@ export default class toDoList extends Component {
           </Row>
           <Row>
             <Col></Col>
-            <Col xs={10}>
+            <Col xs={12}>
               <NavCardBody //InputBar
                 tasks={this.state.tasks}
                 navBaseChosen={this.state.navBaseChosen}
                 //TaskCards
-                isCompleted={this.isComplete.bind(this)}
+                isCompleted={this.isCompleted.bind(this)}
                 deleteItem={this.deleteItem.bind(this)}
               ></NavCardBody>
             </Col>

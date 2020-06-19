@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Nav, Dropdown, NavItem, NavLink } from "react-bootstrap";
-import TaskCards from "./TaskCard";
+import {TaskCard, DeleteButton} from "./TaskCard";
 import "./NavCard.css";
 
 export function NavCardHead(props) {
@@ -25,7 +25,7 @@ export function NavCardHead(props) {
               onClick={props.clickNavCard}
               href="/incomplete"
             >
-              Incompleted tasks
+              Uncompleted tasks
             </Nav.Link>
           </Dropdown.Item>
         </Dropdown.Menu>
@@ -42,11 +42,11 @@ export function NavCardBody(props) {
           <Card.Text>
             {props.navBaseChosen === "all"
               ? props.tasks.map((el) => (
-                  <TaskCards
+                  <TaskCard
                     element={el}
                     deleteItem={props.deleteItem}
                     isCompleted={props.isCompleted}
-                  ></TaskCards>
+                  ></TaskCard>
                 ))
               : props.tasks
                   .filter((el) =>
@@ -55,11 +55,11 @@ export function NavCardBody(props) {
                       : el.isComplete === false
                   )
                   .map((el) => (
-                    <TaskCards
+                    <TaskCard
                       element={el}
                       deleteItem={props.deleteItem}
                       isCompleted={props.isCompleted}
-                    ></TaskCards>
+                    ></TaskCard>
                   ))}
           </Card.Text>
         </Card.Body>

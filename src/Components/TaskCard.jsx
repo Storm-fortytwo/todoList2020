@@ -1,41 +1,28 @@
-import React, { Fragment } from "react";
-import { Button } from "react-bootstrap";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./TaskCard.css";
 
-export default function taskCards(props) {
+export function TaskCard(props) {
   return (
     <div>
-      <h1>
-        {props.element.value}
-        <Fragment className="todoText">
-          {props.element.isComplete === true ? (
-            <Fragment className="buttons">
-              <button
-                type="button"
-                className="btn btn-sm btn-success m-2 ml-auto"
-                id={props.element.id}
-                onClick={props.isCompleted}
-              >
-                <FontAwesomeIcon icon="thumbs-down" /> To do
-              </button>
-            </Fragment>
-          ) : (
-            <Fragment  className="buttons">
-              {" "}
-              <button
-                type="button"
-                className="btn btn-sm btn-warning m-2 ml-auto"
-                id={props.element.id}
-                onClick={props.isCompleted}
-              >
-               <FontAwesomeIcon icon="thumbs-up" /> Done
-              </button>
-            </Fragment>
-          )}
-        </Fragment>
-
+      <p
+        className="justify-content-center"
+        style={{
+          backgroundColor: props.element.isComplete ? "#A9D575" : "#FF8660",
+          fontSize: "20px",
+          padding: "5px",
+        }}
+        id={props.element.id}
+        onClick={props.isCompleted}
+      >
+        {props.element.value}{" "}
         <button
+          style={{
+            padding: "1px",
+            position: "relative",
+            float: "right",
+            marginRight: 0,
+            marginLeft: "auto",
+          }}
           type="button"
           className="btn btn-sm btn-danger m-2 ml-auto"
           id={props.element.id}
@@ -43,7 +30,7 @@ export default function taskCards(props) {
         >
           <FontAwesomeIcon icon="trash"></FontAwesomeIcon> Delete
         </button>
-      </h1>{" "}
+      </p>
     </div>
   );
 }
