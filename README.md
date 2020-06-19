@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created on the second week learning react: https://brisa-jara-todolist.netlify.app/
+
+## Simple ToDo List
+-JavaScript
+-React
+-Bootstra
 
 ## Available Scripts
 
