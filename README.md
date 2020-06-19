@@ -3,7 +3,9 @@ This project was created on the second week learning react: https://brisa-jara-t
 ## Simple ToDo List
 -JavaScript
 -React
--Bootstra
+-Bootstrap
+-CSS
+-Node
 
 ## Available Scripts
 
